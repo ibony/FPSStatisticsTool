@@ -1,0 +1,1 @@
+java -jar fps-statistics-tool-0.0.1-SNAPSHOT.jar > ./fps-statistics-tool-0.0.1-SNAPSHOT.log

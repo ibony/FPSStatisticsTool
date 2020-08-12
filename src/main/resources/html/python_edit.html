@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <title>edit</title>
+</head>
+<body>
+<h1>你好</h1>
+<pre id="editor"></pre>
+</body>
+
+<style type="text/css" media="screen">
+    html, body {
+        overflow-x: hidden;
+        overflow-y: hidden;
+        margin: 0;
+        position: relative;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
+    }
+
+    pre {
+        height: 100%;
+    }
+</style>
+
+<script src="model/ace/ace.js"></script>
+<script>
+    //编辑器初始化
+    var editor = ace.edit("editor");
+    codeEdit_init();
+    function codeEdit_init() {
+        editor.setTheme("ace/theme/textmate");
+        editor.setFontSize(15);
+        editor.session.setMode("ace/mode/python");
+    }
+    editor.setValue("aherfiauhefiawehfiehu\nawdawd\n");
+    //    editor.setValue(Scene.getSceneContent().toString());
+    document.onkeydown = function () {
+        var oEvent = window.event;
+        if (oEvent.keyCode == 83 && oEvent.ctrlKey) {  //这里只能用alt，shift，ctrl等去组合其他键event.altKey、event.ctrlKey、event.shiftKey 属性
+            //Scene.save(editor.getValue());
+            //ctmsAlert.show("通知", "场景【" + Scene.getSceneName() + "】保存成功!!!");
+        }
+    }
+    function setContent(content) {
+        editor.setValue(content);
+    }
+</script>
+</html>
