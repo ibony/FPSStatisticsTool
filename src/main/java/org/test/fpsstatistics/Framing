@@ -1,0 +1,19 @@
+
+public class Framing {
+    public static void main(String[] args) {
+        Driver.setDebug(true);
+        Device device= Driver.getDevice();
+        MiniCap miniCap=new MiniCap() {
+            @Override
+            public void imageOutChange(BufferedImage image) {
+                System.out.println(image);
+                try {
+                    ImageIO.write(image, "png", new File("./采用时间戳.png"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        miniCap.initMinicap(device,9099,0,40).start();
+    }
+}
